@@ -1,0 +1,17 @@
+{% if menu is defined %}
+
+    {% for node in menu %}
+        <ul class="menu pl-0">
+            <li id="{{ node.id }}">
+                <h4>
+                    {% include 'menu/_actions.html.twig' with {'node':node} %}
+                    #{{ node.id }}
+                    {{ node.name }}
+                </h4>
+
+                {% include 'menu/_sub_menu.html.twig' with {'node':node} %}
+            </li>
+        </ul>
+    {% endfor %}
+
+{% endif %}

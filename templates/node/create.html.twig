@@ -1,0 +1,21 @@
+{% extends 'index.html.twig' %}
+
+{% block title %}Create Node{% endblock %}
+
+{% block content %}
+    <h1>Create new Node!</h1>
+    <hr>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-success">
+            <i class="fa fa-floppy-o "></i> Save
+        </button>
+    {{ form_end(form) }}
+
+    <hr>
+    <a class="btn btn-primary btn-sm" href="{{ path('root') }}" role="button">
+        <i class="fa fa-undo"></i> Back to Home
+    </a>
+    <hr>
+{% endblock %}

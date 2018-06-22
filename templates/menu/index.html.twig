@@ -1,0 +1,15 @@
+{% extends 'index.html.twig' %}
+
+{% block content %}
+    <h1>Super Menu!</h1>
+    <hr>
+    <a class="btn btn-primary" href="#" role="button" onclick="collapse.allSubMenus();">
+        <i class="fa fa-plus"></i> Collapse/Expand All
+    </a>
+    <a class="btn btn-success" href="{{ path('node_create') }}" role="button">
+        <i class="fa fa-pencil"></i> Add Menu
+    </a>
+    <hr>
+
+    {% include 'menu/_menu.html.twig' %}
+{% endblock %}

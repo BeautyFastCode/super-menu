@@ -1,0 +1,27 @@
+<div class="actions">
+    {% if node.children is not null %}
+
+        {% if node.children|length > 0 %}
+            <a class="btn btn-primary btn-sm" href="#" role="button" onclick="collapse.oneSubMenu({{ node.id }});">
+                <i class="fa fa-plus"></i>
+                {{ node.children|length }}
+            </a>
+        {% endif %}
+
+        {% if node.children|length > 1 %}
+            <a class="btn btn-warning btn-sm" href="#" role="button" onclick="sort.items({{ node.id }})">
+                <i class="fa fa-sort"></i>
+                Sorting
+            </a>
+        {% endif %}
+
+    {% endif %}
+
+    <a class="btn btn-success btn-sm" href="{{ path('node_edit', {'id': node.id}) }}" role="button">
+        <i class="fa fa-edit"></i> Edit
+    </a>
+
+    <a class="btn btn-danger btn-sm" href="{{ path('node_delete', {'id': node.id}) }}" role="button">
+        <i class="fa fa-trash"></i> Delete
+    </a>
+</div>

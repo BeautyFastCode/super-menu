@@ -1,0 +1,17 @@
+{% if node.children is not null %}
+
+    <ul class="sub-menu">
+        {% for children in node.children %}
+            <li id="{{ children.id }}">
+                <h4>
+                    {% include 'menu/_actions.html.twig' with {'node':children} %}
+                    #{{ children.id }}
+                    {{ children.name }}
+                </h4>
+
+                {% include 'menu/_sub_menu.html.twig' with {'node':children} %}
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
